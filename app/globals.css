@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 24 14% 5%;
+    --foreground: 40 34% 95%;
+    --card: 24 12% 8%;
+    --card-foreground: 40 34% 95%;
+    --popover: 24 12% 8%;
+    --popover-foreground: 40 34% 95%;
+    --primary: 14 85% 61%;
+    --primary-foreground: 40 34% 97%;
+    --secondary: 24 10% 13%;
+    --secondary-foreground: 40 34% 95%;
+    --muted: 24 10% 13%;
+    --muted-foreground: 30 12% 62%;
+    --accent: 36 95% 58%;
+    --accent-foreground: 24 14% 5%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 34% 97%;
+    --border: 24 12% 16%;
+    --input: 24 12% 18%;
+    --ring: 14 85% 61%;
+    --radius: 0.75rem;
+
+    --chart-1: 14 85% 61%;
+    --chart-2: 36 95% 58%;
+    --chart-3: 173 45% 45%;
+    --chart-4: 280 60% 62%;
+    --chart-5: 340 70% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'ss01', 'cv01';
+  }
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .wave-text {
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: wave-x 5s ease infinite;
+  }
+  .grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+}
